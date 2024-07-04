@@ -1,8 +1,12 @@
 <script setup>
 const canvas = ref()
+const app = useNuxtApp()
 
 onMounted(() => {
-  if (canvas.value) console.log(canvas.value)
+  if (canvas.value) {
+    // Initialize WebGL
+    app.$setup(canvas.value)
+  }
 })
 </script>
 
